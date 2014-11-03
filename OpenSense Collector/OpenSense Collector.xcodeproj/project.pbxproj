@@ -589,7 +589,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = OpenSense;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "4ea9adcf-a131-427d-a696-1875914e2c8c";
 				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/../OpenSense/\"/**";
 				WRAPPER_EXTENSION = app;
 			};
