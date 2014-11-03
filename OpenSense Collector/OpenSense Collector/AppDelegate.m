@@ -30,6 +30,9 @@
 //    [defaults boolForKey:@"OSCollecting"];
     
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+//    
+//    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundRefreshStatusDidChangeNotification];
+    
     
     return YES;
 }
@@ -46,14 +49,18 @@
         
         // have to make sure that the collector will also run in the background next time.
         [defaults setBool:YES forKey:@"OSCollecting"];
-        
-        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-        NSDate *now = [NSDate date];
-        localNotification.fireDate = now;
-        localNotification.alertBody = @"performFetchWithCompletionHandler called";
-        localNotification.soundName = UILocalNotificationDefaultSoundName;
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     }
+    else {
+        [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalNever];
+    }
+    
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    NSDate *now = [NSDate date];
+    localNotification.fireDate = now;
+    localNotification.alertBody = @"performFetchWithCompletionHandler called";
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
     completionHandler(UIBackgroundFetchResultNoData);
 }
 
@@ -94,9 +101,10 @@
     OSLog(@"application did become active");
     if ([defaults boolForKey:@"OSCollecting"]){
         [[OpenSense sharedInstance] startCollector];
-        
+        [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     } else {
         [[OpenSense sharedInstance] stopCollector];
+        [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalNever];
     }
 }
 

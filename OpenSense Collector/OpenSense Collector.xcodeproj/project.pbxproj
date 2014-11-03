@@ -54,6 +54,8 @@
 		3DDED6EF167D098B006DE4F8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DDED6ED167D098B006DE4F8 /* MainStoryboard.storyboard */; };
 		3DFE62551694DE4500145310 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFE62541694DE4500145310 /* Icon.png */; };
 		3DFE62571694DE4800145310 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DFE62561694DE4800145310 /* Icon@2x.png */; };
+		9423A19C1A081C81003EA02D /* OAuthTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9423A1991A081C81003EA02D /* OAuthTwoViewController.xib */; };
+		9423A19D1A081C81003EA02D /* OAuthTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9423A19B1A081C81003EA02D /* OAuthTwoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,9 @@
 		3DDED704167D098B006DE4F8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		3DFE62541694DE4500145310 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3DFE62561694DE4800145310 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		9423A1991A081C81003EA02D /* OAuthTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuthTwoViewController.xib; sourceTree = "<group>"; };
+		9423A19A1A081C81003EA02D /* OAuthTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthTwoViewController.h; sourceTree = "<group>"; };
+		9423A19B1A081C81003EA02D /* OAuthTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthTwoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +229,7 @@
 		3D8C708C1694A1B800619CDB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9423A1961A081C77003EA02D /* OAuth */,
 				3D08426A169DE60B0053F4C9 /* Probes */,
 				3D08426D169DE60B0053F4C9 /* Views */,
 				3DB21B5E16978F1D00F6B294 /* TabBarViewController.h */,
@@ -328,6 +334,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9423A1961A081C77003EA02D /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				9423A1991A081C81003EA02D /* OAuthTwoViewController.xib */,
+				9423A19A1A081C81003EA02D /* OAuthTwoViewController.h */,
+				9423A19B1A081C81003EA02D /* OAuthTwoViewController.m */,
+			);
+			name = OAuth;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -416,6 +432,7 @@
 				3DFE62571694DE4800145310 /* Icon@2x.png in Resources */,
 				3DB21AF516973F0F00F6B294 /* background-texture.png in Resources */,
 				3DB21AF616973F0F00F6B294 /* background-texture@2x.png in Resources */,
+				9423A19C1A081C81003EA02D /* OAuthTwoViewController.xib in Resources */,
 				3DB21AF716973F0F00F6B294 /* probes.png in Resources */,
 				3DB21AF816973F0F00F6B294 /* probes@2x.png in Resources */,
 				3DB21AF916973F0F00F6B294 /* start_hover.png in Resources */,
@@ -450,6 +467,7 @@
 				3D084273169DE60B0053F4C9 /* BatchCell.m in Sources */,
 				3D084274169DE60B0053F4C9 /* BatchDataCell.m in Sources */,
 				3DB69EF216B1C0B1009570F3 /* CollectedDataViewController.m in Sources */,
+				9423A19D1A081C81003EA02D /* OAuthTwoViewController.m in Sources */,
 				3DB69EF816B1C3A8009570F3 /* PositioningProbeDataViewController.m in Sources */,
 				3DB69EFB16B1C543009570F3 /* LoadingView.m in Sources */,
 			);

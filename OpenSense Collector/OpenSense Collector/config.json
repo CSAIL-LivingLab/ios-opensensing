@@ -2,7 +2,7 @@
   "name": "awesome2",
   "version": 2,
   "dataUploadOnWifiOnly": true,
-  "baseUrl": "https://128.52.160.129/os_connector",
+  "baseUrl": "http://128.52.170.143:4000/",
   "configUpdatePeriod": 21600,
   "dataArchivePeriod": 300,
   "dataUploadPeriod": 7200,

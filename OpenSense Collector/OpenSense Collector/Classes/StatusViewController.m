@@ -8,6 +8,9 @@
 
 #import "StatusViewController.h"
 #import "OpenSense.h"
+#import "OAuthTwoViewController.h"
+
+
 @interface StatusViewController (){
     NSUserDefaults *defaults;
 }
@@ -31,6 +34,18 @@
     defaults = [NSUserDefaults standardUserDefaults];
     // Subscribe to batch saved notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(batchesUpdated:) name:kOpenSenseBatchSavedNotification object:nil];
+    
+    
+    // register with the openPDS oAuth2 server
+    if (![defaults stringForKey:@"bearer_token"]) {
+        OAuthTwoViewController *oAuthViewController = [[OAuthTwoViewController alloc]  init];
+//        OAuthTwoViewController *oAuthViewController = [[OAuthTwoViewController alloc] initWithNibName:@"AuthVC" bundle:nil];
+        
+        // initwithnibname makes the whole thing go straight to hell. Don't do that. I have no idea why. 2014-09-05
+        [self presentViewController:oAuthViewController animated:YES completion:nil];
+    }
+
+    
     
     // Start collecting
 //    if (![OpenSense sharedInstance].isRunning) {
