@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Tab Bar View Controller-->
@@ -24,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
-        <!--Probes View Controller - Probes-->
+        <!--Probes-->
         <scene sceneID="ajg-90-Rx3">
             <objects>
                 <tableViewController id="ztF-Qt-8Qh" customClass="ProbesViewController" sceneMemberID="viewController">
@@ -59,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="1131" y="287"/>
         </scene>
-        <!--Collected Data View Controller - Collected data-->
+        <!--Collected data-->
         <scene sceneID="BWm-ZS-I2z">
             <objects>
                 <tableViewController id="oo7-Zy-rV0" customClass="CollectedDataViewController" sceneMemberID="viewController">
@@ -181,7 +182,7 @@
             </objects>
             <point key="canvasLocation" x="1572" y="963"/>
         </scene>
-        <!--Navigation Controller - Collected data-->
+        <!--Collected data-->
         <scene sceneID="YmB-Zp-q1e">
             <objects>
                 <navigationController definesPresentationContext="YES" id="V4n-qr-HeF" sceneMemberID="viewController">
@@ -197,7 +198,7 @@
             </objects>
             <point key="canvasLocation" x="591" y="963"/>
         </scene>
-        <!--Navigation Controller - Probes-->
+        <!--Probes-->
         <scene sceneID="LL2-g3-xZY">
             <objects>
                 <navigationController definesPresentationContext="YES" id="1ZI-cw-4PK" sceneMemberID="viewController">
@@ -213,7 +214,7 @@
             </objects>
             <point key="canvasLocation" x="597" y="287"/>
         </scene>
-        <!--Navigation Controller - Status-->
+        <!--Status-->
         <scene sceneID="pQF-VO-nxo">
             <objects>
                 <navigationController definesPresentationContext="YES" id="zUe-R6-T6t" sceneMemberID="viewController">
@@ -229,7 +230,7 @@
             </objects>
             <point key="canvasLocation" x="601" y="-395"/>
         </scene>
-        <!--Status View Controller - Status-->
+        <!--Status-->
         <scene sceneID="I9t-Uz-da4">
             <objects>
                 <viewController id="2eR-TY-dwr" customClass="StatusViewController" sceneMemberID="viewController">
@@ -248,7 +249,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Not collecting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9Z-o1-lrj">
-                                        <rect key="frame" x="102" y="150" width="115" height="21"/>
+                                        <rect key="frame" x="102" y="150" width="115" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="115" id="znu-lA-KUt"/>
                                         </constraints>
@@ -275,13 +276,22 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOu-o8-0eQ">
                                         <rect key="frame" x="93" y="320" width="133" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Upload Data">
                                             <color key="titleShadowColor" cocoaTouchSystemColor="lightTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="toggleUpload:" destination="2eR-TY-dwr" eventType="touchUpInside" id="m5l-X3-5rE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8Y-LM-2Sf">
+                                        <rect key="frame" x="106" y="369" width="108" height="30"/>
+                                        <state key="normal" title="Register Device">
+                                            <color key="titleColor" red="0.1098039299" green="0.9450981021" blue="0.82745105029999999" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerDevice:" destination="2eR-TY-dwr" eventType="touchUpInside" id="YKO-RK-PXj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -316,7 +326,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPz-yi-71f">
-                                        <rect key="frame" x="85" y="155" width="115" height="21"/>
+                                        <rect key="frame" x="85" y="155" width="115" height="20.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>

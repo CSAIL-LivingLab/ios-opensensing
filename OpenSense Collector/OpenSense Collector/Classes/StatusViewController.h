@@ -18,7 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelStorage;
 @property (weak, nonatomic) IBOutlet UILabel *labelTime;
 
+
+
 - (IBAction)toggleCollecting:(id)sender;
 - (IBAction)toggleUpload:(id)sender;
+- (IBAction)registerDevice:(id)sender;
+
 
 @end

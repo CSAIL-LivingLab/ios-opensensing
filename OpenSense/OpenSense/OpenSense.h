@@ -32,5 +32,6 @@
 - (NSString*)encryptionKey;
 
 - (void) stopCollectorAndUploadData;
+- (void) registerDevice;
 
 @end

@@ -40,7 +40,7 @@
     if (![defaults stringForKey:@"bearer_token"]) {
         OAuthTwoViewController *oAuthViewController = [[OAuthTwoViewController alloc]  init];
 //        OAuthTwoViewController *oAuthViewController = [[OAuthTwoViewController alloc] initWithNibName:@"AuthVC" bundle:nil];
-        
+
         // initwithnibname makes the whole thing go straight to hell. Don't do that. I have no idea why. 2014-09-05
         [self presentViewController:oAuthViewController animated:YES completion:nil];
     }
@@ -86,7 +86,9 @@
 {
     if ([defaults boolForKey:@"OSCollecting"]) // turn off
     {
+        [defaults setBool:NO forKey:@"OSCollecting"];
         [[OpenSense sharedInstance] stopCollector];
+
         [self.runningView setHidden:YES];
         [self.pausedView setHidden:NO];
         
@@ -99,6 +101,7 @@
     }
     else // turn on
     {
+        [defaults setBool:YES forKey:@"OSCollecting"];
         [[OpenSense sharedInstance] startCollector];
         [self.runningView setHidden:NO];
         [self.pausedView setHidden:YES];
@@ -111,6 +114,10 @@
 - (IBAction)toggleUpload:(id)sender {
     // should only be called when OpenSense is stopped
     [[OpenSense sharedInstance] stopCollectorAndUploadData];
+}
+
+- (IBAction)registerDevice:(id)sender {
+    [[OpenSense sharedInstance] registerDevice];
 }
 
 - (void)dealloc

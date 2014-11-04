@@ -22,7 +22,6 @@
 #import "OSMotionProbe.h"
 
 @implementation OpenSense {
-    NSUserDefaults *defaults;
 }
 
 @synthesize isRunning;
@@ -45,7 +44,6 @@
     if (self)
     {
         registrationInProgress = NO;
-        defaults = [NSUserDefaults standardUserDefaults];
         NSError *error = nil;
         if (![STKeychain getPasswordForUsername:@"OpenSense" andServiceName:@"OpenSense" error:&error]) {
             [self registerDevice];
@@ -60,6 +58,7 @@
 
 - (void)registerDevice
 {
+    OSLog(@"register device called");
     // Make sure that registration can not be called multiple times at once
     if (registrationInProgress) {
         return;
@@ -121,7 +120,6 @@
     // Update state information
     isRunning = YES;
     startTime = [NSDate date];
-    [defaults setBool:YES forKey:@"OSCollecting"];
     
     // Start all probes
     activeProbes = [[NSMutableArray alloc] init];
@@ -159,7 +157,6 @@
     
     // update state information
     activeProbes = nil;
-    [defaults setBool:NO forKey:@"OSCollecting"];
     isRunning = NO;
     
     // Stop timers
