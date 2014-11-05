@@ -39,8 +39,6 @@
     // register with the openPDS oAuth2 server
     if (![defaults stringForKey:@"bearer_token"]) {
         OAuthTwoViewController *oAuthViewController = [[OAuthTwoViewController alloc]  init];
-//        OAuthTwoViewController *oAuthViewController = [[OAuthTwoViewController alloc] initWithNibName:@"AuthVC" bundle:nil];
-
         // initwithnibname makes the whole thing go straight to hell. Don't do that. I have no idea why. 2014-09-05
         [self presentViewController:oAuthViewController animated:YES completion:nil];
     }

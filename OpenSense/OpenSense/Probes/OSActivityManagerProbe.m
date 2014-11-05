@@ -100,12 +100,12 @@
     __block NSDictionary *point = [NSDictionary alloc];
     __block NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
     __block NSMutableArray *arr = [[NSMutableArray alloc] init];
-    
+    __block BOOL done = false;
     
     [cm queryActivityStartingFromDate:lastSampleDate toDate:now toQueue:activityQueue withHandler:^(NSArray *activities, NSError *error){
-        
+        done = true;
         // for each returned activity
-        for(int i=0;i<[activities count]-1;i++) {
+        for(int i=0;i<[activities count]-1 && [activities count];i++) {
             CMMotionActivity *a = [activities objectAtIndex:i];
             
             NSDate *startDate = a.startDate;
@@ -138,6 +138,8 @@
         }
     }];
     
+    while (!done) {
+    }
     return data;
 }
 
